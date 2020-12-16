@@ -31,11 +31,23 @@ void button1On()
     }
 }
 
-void button1Off()
+void buttonOff()
 {
     for(int i=0;i<4;i++)
     {
         digitalWrite(pinLeds[i],0);
+    }
+}
+
+void button2On()
+{
+    for(int i=0;i<4;i++)
+    {
+        if(i==2)
+        {
+            continue;
+        }
+        digitalWrite(pinLeds[i],1);
     }
 }
 void loop()
@@ -48,20 +60,22 @@ void loop()
     else
     if(digitalRead(pinButtons[0])==1)
     {
-        button1Off();
+        buttonOff();
+    } else
+    if(digitalRead(pinButtons[1])==0)
+    {
+        button2On();
+    }
+    else
+    if(digitalRead(pinButtons[1])==1)
+    {
+        buttonOff();
     }
 
-}
-
-
-
-void button2On()
-{
 
 }
 
-void button2Off()
-{
 
 
-}
+
+
