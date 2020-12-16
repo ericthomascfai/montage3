@@ -61,7 +61,7 @@ void loop()
     if(digitalRead(pinButtons[0])==1)
     {
         buttonOff();
-    } 
+    }
     if(digitalRead(pinButtons[1])==0)
     {
         button2On();
